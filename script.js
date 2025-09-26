@@ -1,6 +1,5 @@
 // Year
 document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
-// Sticky header shadow (optional)
 // Quick Inquiry modal
 (function(){
   const btn = document.querySelector('.quick-inquiry');
@@ -14,7 +13,7 @@ document.getElementById('year') && (document.getElementById('year').textContent 
   modal.addEventListener('click', (e)=>{ if(e.target === modal) hide(); });
   window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') hide(); });
 })();
-// v4.10: CC submitter when 'Send me a copy' checked
+// CC submitter when 'Send me a copy' is checked
 (function(){
   document.querySelectorAll('form.inquiry').forEach(form => {
     form.addEventListener('submit', () => {
@@ -28,4 +27,19 @@ document.getElementById('year') && (document.getElementById('year').textContent 
       }
     });
   });
+})();
+// Simple slider autoplay + arrows
+(function(){
+  const slides = document.querySelectorAll('.slide');
+  if(!slides.length) return;
+  let i = 0;
+  const show = idx => { slides.forEach((s,j)=>s.classList.toggle('active', j===idx)); }
+  const next = () => { i = (i+1)%slides.length; show(i); }
+  const prev = () => { i = (i-1+slides.length)%slides.length; show(i); }
+  show(0);
+  const nbtn = document.querySelector('.slider .next');
+  const pbtn = document.querySelector('.slider .prev');
+  nbtn && nbtn.addEventListener('click', next);
+  pbtn && pbtn.addEventListener('click', prev);
+  setInterval(next, 6000);
 })();

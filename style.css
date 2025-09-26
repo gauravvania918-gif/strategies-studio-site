@@ -3,16 +3,29 @@
   --ink:#0C1C57; --ink-2:#2a366b; --line:#e5e7eb;
   --bg:#ffffff; --bg-alt:#f7f8fa;
 }
-*{box-sizing:border-box} html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;color:var(--ink);background:var(--bg)}
+*{box-sizing:border-box} html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;color:#111;background:var(--bg)}
 .container{max-width:1100px;margin:0 auto;padding:0 16px}
+h1,h2,h3,h4{color:var(--brand-dark)}
 /* Header */
 .site-header{position:sticky;top:0;background:#fff;border-bottom:2px solid #e6e9f5;z-index:10}
 .header-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
 .logo-img{height:60px;width:auto}
 .main-nav{display:flex;gap:16px;align-items:center}
-.main-nav a{text-decoration:none;color:var(--brand-dark)}
-.main-nav a:hover{color:var(--brand-accent)}
+.main-nav a{text-decoration:none;color:var(--brand-dark)} .main-nav a:hover{color:var(--brand-accent)}
 .main-nav .button{padding:8px 12px;border-radius:12px;background:var(--brand-dark);color:#fff}
+/* Hero Slider */
+.hero{position:relative;overflow:hidden;border-bottom:2px solid #e6e9f5}
+.slider{position:relative}
+.slide{position:relative;min-height:58vh;display:none}
+.slide.active{display:block}
+.slide img{width:100%;height:58vh;object-fit:cover;filter:brightness(.78)}
+.hero .slide::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(0deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.20) 60%, rgba(0,0,0,0) 100%);pointer-events:none;}
+.caption{position:absolute;left:6%;bottom:10%;max-width:min(700px,80%);background:rgba(255,255,255,.08);-webkit-backdrop-filter: blur(6px);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:14px 16px;color:#fff;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.caption .kicker{display:inline-block;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;padding:4px 8px;border-radius:999px;background:rgba(12,28,87,.82);color:#fff;margin-bottom:8px}
+.caption h1{margin:0 0 6px;font-size:clamp(28px,4.2vw,48px);color:#fff}
+.caption p{font-size:clamp(15px,2vw,18px);opacity:.95;color:#f3f4f6}
+.slider .nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(12,28,87,.85);color:#fff;border:none;border-radius:999px;width:40px;height:40px;cursor:pointer}
+.slider .prev{left:10px}.slider .next{right:10px}
 /* Footer */
 .mega-footer{border-top:1px solid var(--line);background:#f7f8fc}
 .footer-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:22px;padding:26px 0}
@@ -20,7 +33,7 @@
 .mega-footer h4{margin:.2rem 0 .4rem;color:var(--brand-dark)}
 .list{list-style:none;margin:0;padding:0}
 .list li{margin:.26rem 0}
-.list a{color:var(--ink);text-decoration:none}
+.list a{color:#111;text-decoration:none}
 .list a:hover{color:var(--brand-accent)}
 .tiny-row{padding:10px 0;border-top:1px solid var(--line);text-align:center;color:#546}
 /* Buttons */
@@ -39,6 +52,14 @@
 .modal .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 @media(max-width:520px){.modal .grid-2{grid-template-columns:1fr}}
 .modal .inquiry input,.modal .inquiry textarea,.modal select{width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);margin:6px 0;background:#fff}
-
-/* v4.10 send me a copy */
+/* Send me a copy */
 .sendcopy{display:flex;align-items:center;gap:8px;margin:6px 0 8px;color:#2a366b;font-size:14px}
+/* Floating WhatsApp */
+.float-wa{position:fixed;left:16px;bottom:16px;z-index:41}
+.float-wa img{width:46px;height:46px;border-radius:50%;box-shadow:0 8px 18px rgba(0,0,0,.2)}
+/* Services page layout */
+.services-list{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){.services-list{grid-template-columns:1fr}}
+.services-list .item{border:1px solid #e6e9f5;border-radius:14px;padding:16px;background:#fff}
+.services-list .item h2{margin:.2rem 0 .4rem;color:var(--brand-dark)}
+.underlined{border-bottom:3px solid #e6e9f5;padding-bottom:6px;margin-top:10px}
