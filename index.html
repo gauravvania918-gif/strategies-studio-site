@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Strategies Studio – HR Consulting</title>
@@ -8,11 +7,9 @@
   <link rel="canonical" href="https://strategiesstudio.com/" />
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" />
   <link rel="icon" href="assets/favicon-red-32.png" sizes="32x32" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <link rel="manifest" href="site.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/favicon-32.png" />
   <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+</head><body>
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="index.html" aria-label="Strategies Studio">
@@ -27,14 +24,18 @@
     </div>
   </header>
 <main class="container">
-<section><h1 class="underlined">Welcome to Strategies Studio</h1><p>Set Your Destination with people‑first, data‑driven HR consulting.</p><p><a class="button accent" href="contact.html">Book a Consultation</a></p></section>
+
+  <section>
+    <h1 class="underlined">Welcome to Strategies Studio</h1>
+    <p>Set Your Destination with people‑first, data‑driven HR consulting.</p>
+    <p><a class="button accent" href="contact.html">Book a Consultation</a></p>
+  </section>
+
 </main>
   <footer class="mega-footer">
     <div class="container footer-grid">
       <div class="col brand-col">
         <img src="assets/logo.png" alt="Strategies Studio" class="footer-logo" loading="lazy"/>
-        <p class="brand-name">Strategies Studio</p>
-        <p class="tagline">Set Your Destination</p>
       </div>
       <nav class="col">
         <h4>Quick Links</h4>
@@ -62,7 +63,43 @@
     </div>
   </footer>
   <a href="https://wa.me/919106766028" class="float-wa" target="_blank" aria-label="WhatsApp chat">WhatsApp</a>
-  <a href="tel:+919106766028" class="float-call" aria-label="Call Strategies Studio">📞</a>
+  <button class="quick-inquiry" type="button" aria-haspopup="dialog" aria-controls="qi-modal">Quick Inquiry</button>
+
+  <!-- Quick Inquiry Modal -->
+  <div class="modal" id="qi-modal" role="dialog" aria-modal="true" aria-labelledby="qi-title">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 id="qi-title">Quick Inquiry</h3>
+        <button id="qi-close" class="modal-close" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body">
+        <form class="inquiry" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="grid-2">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Work email" required />
+          </div>
+          <div class="grid-2">
+            <input type="tel" name="phone" placeholder="Phone (optional)" />
+            <select name="interest" aria-label="Service interest">
+              <option value="" selected>Service interest (optional)</option>
+              <option>Talent Acquisition</option>
+              <option>Employee Engagement</option>
+              <option>Training & Development</option>
+              <option>Compliance & Risk</option>
+              <option>Payroll & Benefits</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+          <label class="sendcopy"><input type="checkbox" name="send_copy" value="1"> Send me a copy</label>
+          <input type="hidden" name="_cc" value="">
+          <input type="hidden" name="_replyto" value="">
+          <input type="hidden" name="_subject" value="Quick Inquiry from Website" />
+          <button type="submit" class="button accent">Send inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
-</body>
-</html>
+</body></html>
